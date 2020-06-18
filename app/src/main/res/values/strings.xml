@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Metronome</string>
     <string name="bpm_default">120</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
 </resources>
