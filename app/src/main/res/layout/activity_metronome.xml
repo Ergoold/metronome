@@ -11,6 +11,7 @@
         android:id="@+id/bpm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:text="@string/bpm_default"
         android:textAlignment="center"
         android:textSize="48sp" />
