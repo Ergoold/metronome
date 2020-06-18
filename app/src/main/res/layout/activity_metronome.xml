@@ -24,7 +24,7 @@
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="START"
+        android:text="@string/start"
         android:textSize="48sp" />
 
 </LinearLayout>
