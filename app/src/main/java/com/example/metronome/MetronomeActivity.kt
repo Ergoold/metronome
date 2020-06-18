@@ -8,11 +8,19 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 class MetronomeActivity : AppCompatActivity() {
-    lateinit var bpm: EditText
-    lateinit var start: Button
+    private lateinit var bpm: EditText
+    private lateinit var start: Button
 
-    var delay: Long = 0
-    var on = false
+    private var delay: Long = 0
+    private var on = false
+
+    private val handler = Handler()
+    private val runnable = object : Runnable {
+        override fun run() {
+            start.playSoundEffect(SoundEffectConstants.CLICK)
+            handler.postDelayed(this, delay)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,14 +28,6 @@ class MetronomeActivity : AppCompatActivity() {
 
         bpm = findViewById(R.id.bpm)
         start = findViewById(R.id.start)
-
-        val handler = Handler()
-        val runnable = object : Runnable {
-            override fun run() {
-                start.playSoundEffect(SoundEffectConstants.CLICK)
-                handler.postDelayed(this, delay)
-            }
-        }
 
         start.setOnClickListener {
             if (!on) {
